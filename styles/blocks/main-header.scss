@@ -1,0 +1,82 @@
+.main-header {
+  background-color: $base-white;
+  color: $base-black;
+  padding: 12px 20px;
+  min-width: 320px;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    padding: 0 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 0 auto;
+    width: 1440px;
+  }
+}
+
+.main-header__wrapper {
+  display: flex;
+  height: 100%;
+
+  @media (min-width: $tablet-width) {
+    margin-right: 67px;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 20px;
+    align-items: center;
+    margin-right: 160px;
+  }
+}
+
+.main-header__logo {
+  height: 100%;
+  margin-right: auto;
+
+  @media (min-width: $tablet-width) {
+    padding: 21px 0;
+    min-width: 82px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 22px 0 20px;
+    min-width: 170px;
+  }
+}
+
+.main-header__link {
+  display: none;
+  height: 100%;
+  padding: 12px 0;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+    text-decoration: none;
+    color: $base-black;
+    width: 130px;
+    min-width: 126px;
+    padding: 24px 0;
+  }
+}
+
+.main-header__link:hover,
+.main-header__link:focus {
+  color: $base-primary;
+}
+
+.main-header__link:focus-visible {
+  outline: none;
+  color: $base-primary;
+}
+
+@supports not (selector(:focus-visible)) {
+  .main-header__link:focus {
+    outline: none;
+    color: $base-primary;
+  }
+}

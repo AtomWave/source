@@ -1,0 +1,196 @@
+.range-slider__slider-wrapper-input {
+  display: flex;
+  align-items: center;
+  column-gap: 18px;
+
+  @media (min-width: $tablet-width) {
+    column-gap: 20px;
+  }
+}
+
+.range-slider__input {
+  width: 118px;
+  height: 40px;
+  padding: 8px 10px;
+  font-family: $primary-font;
+  background-color: $base-white;
+  color: $base-black;
+  border: 2px solid $primary-lighter-color;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  appearance: textfield;
+  cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    width: 87px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 134px;
+  }
+}
+
+.range-slider__input--min::placeholder {
+  color: $base-grey;
+}
+
+.range-slider__input--max::placeholder {
+  color: $base-black;
+}
+
+.range-slider__input:focus {
+  border-color: $primary-darker-color;
+}
+
+.range-slider__input:focus-visible {
+  outline: none;
+  border-color: $primary-darker-color;
+}
+
+@supports not (selector(:focus-visible)) {
+  .range-slider__input:focus {
+    outline: none;
+    border-color: $primary-darker-color;
+  }
+}
+
+.range-slider__input:disabled {
+  border-color: $light-grey-color;
+  background-color: $background-lightest-grey;
+  color: $base-grey;
+  pointer-events: none;
+  cursor: default;
+}
+
+.range-slider__input::-webkit-outer-spin-button,
+.range-slider__input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.range-slider__separator {
+  display: inline-block;
+  width: 8px;
+  height: 2px;
+  background-color: $base-grey;
+
+  @media (min-width: $desktop-width) {
+    width: 10px;
+  }
+}
+
+/* custom setting */
+.custom-range-slider {
+  width: 273px;
+  margin: 0 0 34px 7px;
+
+  @media (min-width: $tablet-width) {
+    width: 216px;
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 311px;
+    margin-bottom: 32px;
+  }
+}
+
+.noui-target {
+  background-color: transparent;
+  border-radius: inherit;
+  border: none;
+  box-shadow: none;
+  height: 4px;
+}
+
+.noui-horizontal .noui-handle {
+  top: -10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+}
+
+.noui-horizontal .noui-handle.noui-handle-upper {
+  right: -8px;
+
+  @media (min-width: $tablet-width) {
+    right: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    right: -10px;
+  }
+}
+
+.noui-handle {
+  background-color: $base-white;
+  border: 2px solid $primary-lighter-color;
+  box-shadow: none;
+}
+
+.noui-handle::before,
+.noui-handle::after {
+  display: none;
+}
+
+.noui-handle:focus-visible {
+  outline: none;
+}
+
+@supports not (selector(:focus-visible)) {
+  .noui-handle:focus {
+    outline: none;
+  }
+}
+
+.noui-handle:focus-visible .noui-touch-area {
+  background-color: $primary-lighter-opacity;
+}
+
+@supports not (selector(:focus-visible)) {
+  .noui-handle:focus .noui-touch-area {
+    background-color: $primary-lighter-opacity;
+  }
+}
+
+.range-slider__slider[disabled] .noui-handle {
+  border-color: $base-grey;
+}
+
+.noui-connect {
+  height: 4px;
+  background-color: $primary-lighter-color;
+}
+
+.noui-connects {
+  height: 2px;
+  overflow: visible;
+  border-radius: inherit;
+  background-color: $light-grey-color;
+}
+
+.noui-touch-area {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+
+  &:hover,
+  &:focus {
+    background-color: $primary-lighter-opacity;
+  }
+
+  &:active {
+    background-color: $base-primary;
+  }
+
+  &:disabled {
+    background-color: $base-grey;
+  }
+}

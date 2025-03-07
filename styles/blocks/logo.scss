@@ -1,0 +1,36 @@
+.logo {
+  display: block;
+}
+
+.logo:hover,
+.logo:focus {
+  opacity: 0.8;
+}
+
+.logo:focus-visible,
+.logo__link:focus-visible {
+  outline: none;
+  opacity: 0.8;
+}
+
+@supports not (selector(:focus-visible)) {
+  .logo:focus,
+  .logo__link:focus {
+    outline: none;
+    opacity: 0.8;
+  }
+}
+
+.logo__link {
+  display: block;
+
+  @media (min-width: $tablet-width) {
+    height: 36px;
+    width: 170px;
+    border-radius: 4px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 10px;
+  }
+}

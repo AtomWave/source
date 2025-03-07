@@ -1,0 +1,67 @@
+.social {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  width: 100%;
+
+  @media (min-width: $tablet-width) {
+    width: auto;
+    gap: 19px;
+  }
+}
+
+.social__item {
+  height: 100%;
+  width: 100%;
+}
+
+.social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: $base-grey;
+  border-radius: 4px;
+
+  @media (min-width: $tablet-width) {
+    padding: 10px;
+  }
+}
+
+.social__link:hover,
+.social__link:focus {
+  color: $base-primary;
+  background: $base-secondary;
+}
+
+.social__link:focus-visible {
+  outline: none;
+  color: $base-primary;
+  background: $base-secondary;
+}
+
+@supports not (selector(:focus-visible)) {
+  .social__link:focus {
+    outline: none;
+    color: $base-primary;
+    background: $base-secondary;
+  }
+}
+
+.social__link:active {
+  background: $primary-lighter-opacity;
+}
+
+.social__link--vkontakte {
+  padding-left: 4px;
+
+  @media (min-width: $tablet-width) {
+    padding-left: 10px;
+  }
+}

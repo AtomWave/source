@@ -1,0 +1,62 @@
+.map {
+  width: 100vw;
+  height: 420px;
+
+  @media (min-width: $tablet-width) {
+    height: 480px;
+  }
+
+  @media (min-width: $desktop-width) {
+    height: 540px;
+  }
+}
+
+.map__wrapper {
+  position: relative;
+  background:
+    image-set(
+      url("../../images/map-mobile@1x.png") 1x,
+      url("../../images/map-mobile@2x.png") 2x
+    );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  height: 100%;
+  width: 100vw;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    background:
+      image-set(
+        url("../../images/map-tablet@1x.png") 1x,
+        url("../../images/map-tablet@2x.png") 2x
+      );
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @media (min-width: $desktop-width) {
+    background:
+      image-set(
+        url("../../images/map-desktop@1x.png") 1x,
+        url("../../images/map-desktop@2x.png") 2x
+      );
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.map__wrapper::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(90%, -50%);
+  width: 38px;
+  height: 50px;
+  background-image: url("../../icons/stack.svg#map-pin");
+  background-size: 38px 50px;
+}

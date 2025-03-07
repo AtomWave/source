@@ -1,0 +1,16 @@
+/* здесь используйте глобальные селекторы img, body, html и так далее */
+body {
+  position: relative;
+  font-family: $primary-font;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: $base-black;
+}
+
+.fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}

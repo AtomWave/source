@@ -1,0 +1,14 @@
+.info-contacts {
+  position: relative;
+  padding-left: 19px;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 1px;
+    content: "";
+    width: 13px;
+    height: 16px;
+    background-size: 13px 16px;
+  }
+}

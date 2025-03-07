@@ -1,0 +1,100 @@
+.nav-list {
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-right: 0;
+  }
+}
+
+.nav-list__item:not(:last-child) {
+  @media (min-width: $desktop-width) {
+    margin-right: 22px;
+  }
+}
+
+.nav-list__item--current {
+  @media (min-width: $tablet-width) {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background: $base-primary;
+    }
+  }
+}
+
+.nav-list__link {
+  min-height: 100%;
+  font-family: $primary-font-medium;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  color: $base-black;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: $base-white;
+
+  @media (max-width: $mobile-width) {
+    border-bottom: 1px solid $base-secondary;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 32px 21px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+.nav-list__link--current {
+  @media (max-width: $mobile-width) {
+    background-color: $base-secondary;
+  }
+
+  @media (min-width: $tablet-width) {
+    color: $base-primary;
+  }
+}
+
+.nav-list__link:hover,
+.nav-list__link:focus {
+  @media (min-width: $tablet-width) {
+    color: $base-primary;
+  }
+}
+
+.nav-list__link:focus-visible {
+  outline: none;
+  color: $base-primary;
+  background: $base-secondary;
+}
+
+@supports not (selector(:focus-visible)) {
+  .nav-list__link:focus {
+    outline: none;
+    color: $base-primary;
+    background: $base-secondary;
+  }
+}
+
+.nav-list__link:active {
+  @media (min-width: $tablet-width) {
+    color: $base-primary;
+    background-color: $base-secondary;
+  }
+}

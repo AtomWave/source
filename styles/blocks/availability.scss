@@ -1,0 +1,93 @@
+.availability__title {
+  margin-bottom: 20px;
+}
+
+.availability__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: left;
+}
+
+.availability__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.availability__item:last-child {
+  margin-bottom: 2px;
+}
+
+.availability__subtitle {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 23px;
+  white-space: normal;
+  cursor: pointer;
+}
+
+.availability__subtitle:has(.availability__input:disabled) {
+  cursor: default;
+  opacity: 0.25;
+}
+
+.availability__input {
+  position: relative;
+  appearance: none;
+  margin: 0;
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #bdbdbd;
+  background-color: $base-white;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.availability__input::before {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background-color: $base-primary;
+  border-radius: 50%;
+}
+
+.availability__input:checked {
+  border: 2px solid $base-primary;
+}
+
+.availability__input:checked::before {
+  display: block;
+}
+
+.availability__input:hover::before,
+.availability__input:focus::before {
+  display: block;
+  opacity: 0.25;
+}
+
+.availability__input:focus-visible {
+  outline: none;
+}
+
+@supports not (selector(:focus-visible)) {
+  .availability__input:focus {
+    outline: none;
+  }
+}
+
+.availability__input:disabled {
+  border-color: $light-grey-color;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.availability__input:disabled::before {
+  display: none;
+}
